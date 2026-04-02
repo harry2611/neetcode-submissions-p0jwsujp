@@ -7,13 +7,12 @@ class Solution {
 
         for(int i=1; i< prices.length; i++){
             int curr_profit = prices[i]- buy_price;
-           
+            if (curr_profit > max_profit){
+                max_profit = curr_profit; 
+            }
             if (prices[i] < buy_price){
                 buy_price=prices[i]; 
 
-            }
-             if (curr_profit > max_profit){
-                max_profit = curr_profit; 
             }
         }
         return max_profit;
